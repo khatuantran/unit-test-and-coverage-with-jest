@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "882054e3-27f4-470d-86a2-f2bf8e09fa8b",
+		"name": "MangeStore",
+		"description": "# Introduction\n\nAPIs of StoreService.\n\n# Overview\n\nAPIs:\n\n/auth/sign_up?type=owner: Sign in an owner account\n\n/store_owner/manage_store/create: Create a store for an owner\n\n/store_owner/manage_store: Get the list of owner's stores\n\n# Authentication\n\nWhat is the preferred way of using the API?  \nAssump that api was authenticated, default ownerId: 9999\n\n# Error Codes\n\nAll of this above return a json body, some thing like this:\n\n{\n\ntype: 'error',\n\nmessage: 'Some thing is error'\n\n}\n\nor\n\n{\n\ntype: 'success',\n\ndata: {\n\n\\[list of data\\]\n\n}\n\n}\n\n# Rate limit\n\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18255564"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/auth/sign_up?type=owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "khakhakha",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "0168321Aa",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "khatuantran11@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "khatuantran",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/sign_up?type=owner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"sign_up"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "owner"
+						},
+						{
+							"key": "username",
+							"value": "owner",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Owner sign up account"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/store_owner/manage_store/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "DienMayChoLon",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "DanNang",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "0123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/store_owner/manage_store/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store_owner",
+						"manage_store",
+						"create"
+					]
+				},
+				"description": "Owner create a store"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/store_owner/manage_store",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/store_owner/manage_store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store_owner",
+						"manage_store"
+					]
+				},
+				"description": "Owner list their store"
+			},
+			"response": []
+		}
+	]
+}
