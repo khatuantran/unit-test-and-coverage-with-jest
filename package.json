@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon ./bin/www.js",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
-    "down": "npx sequelize-cli db:migrate:undo"    
+    "down": "npx sequelize-cli db:migrate:undo"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,9 @@
     "sequelize": "^6.20.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.4.1"
+    "jest": "^28.1.1",
+    "sequelize-cli": "^6.4.1",
+    "superagent": "^7.1.6",
+    "supertest": "^6.2.3"
   }
 }
